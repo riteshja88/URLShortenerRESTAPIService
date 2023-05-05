@@ -73,7 +73,7 @@ The response will be a JSON object containing the statistics for the short URL:
 }
 ```
 
-- **\`GET /api/stats\`**: RRetrieves statistics about the entire service and all short URLs
+- **\`GET /api/stats\`**: Retrieves statistics about the entire service and all short URLs
 
 To retrieve statistics about all short URLs, make a **\`GET\`** request to the **\`/api/stats\`** endpoint. Here's an example using cURL:
 ```
