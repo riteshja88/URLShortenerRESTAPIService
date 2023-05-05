@@ -28,6 +28,7 @@ In addition to the statistics for each individual URL, there are also statistics
 The following API endpoints should be available:
 
 - **\`POST /api/shorten\`**: Creates a new short URL
+
 To create a new short URL, make a **\`POST\`** request to the **\`/api/shorten\`** endpoint with a JSON payload containing the original URL. Here's an example using cURL:
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' http://localhost:3000/api/shorten
@@ -47,6 +48,7 @@ The response will be a JSON object containing the shortened URL and its statisti
 ```
 
 - **\`GET /:shortUrl\`**: Redirects to the original URL associated with the short URL
+
 To redirect to the original URL associated with a short URL, make a **\`GET\`** request to the **\`/:shortUrl\`** endpoint, where **\`:shortUrl\`** is the shortened URL you want to redirect to. Here's an example using cURL:
 ```
 curl http://localhost:3000/abc123
@@ -55,6 +57,7 @@ The response will be a redirect to the original URL associated with the short UR
 
 
 - **\`GET /api/:shortUrl/stats\`**: Retrieves statistics about a specific short URL
+
 To retrieve statistics about a specific short URL, make a **\`GET\`** request to the **\`/api/:shortUrl/stats\`** endpoint, where **\`:shortUrl\`** is the shortened URL you want to retrieve statistics for. Here's an example using cURL:
 ```
 curl http://localhost:3000/api/abc123/stats
@@ -71,6 +74,7 @@ The response will be a JSON object containing the statistics for the short URL:
 ```
 
 - **\`GET /api/stats\`**: RRetrieves statistics about the entire service and all short URLs
+
 To retrieve statistics about all short URLs, make a **\`GET\`** request to the **\`/api/stats\`** endpoint. Here's an example using cURL:
 ```
 curl http://localhost:3000/api/stats
