@@ -186,3 +186,5 @@ To install and run the URL shortener service, we should be able to follow these 
 | **\`POST /api/shorten\`** (service level stats) | 15    |
 | **\`GET /:shortUrl\`** (service level stats) | 15    |
 | **\`GET /api/stats\`** | 10 |
+
+It may be best to follow the above order and resist temptation to aim for more points first, as there is dependency of the second item on the first item and so on.
