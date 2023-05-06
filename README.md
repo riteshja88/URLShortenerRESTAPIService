@@ -19,11 +19,13 @@ For each short URL created using the API, you can retrieve statistics about the 
 ## URL Shortener REST API Service Statistics
 In addition to the statistics for each individual URL, there are also statistics for the entire service. These statistics include:
 - Time when the last short URL was created
+- The last shortened URL that was created.
 - Minimum/Maximum/Average/Last Time taken(in ms) to create short URLs
 - Number of short URLs created today
 - Minimum/Maximum/Average number of short URLs created in a day
 - Total number of short URLs created
 - Time when the last short URL was accessed
+- The last shortened URL that was accessed.
 - Minimum/Maximum/Average/Last Time taken(in ms) to access short URLs
 - Number of short URLs accessed today
 - Minimum/Maximum/Average number of short URLs accessed in a day
