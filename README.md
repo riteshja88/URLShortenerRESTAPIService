@@ -178,7 +178,7 @@ To install and run the URL shortener service, we should be able to follow these 
 ## Suggested project plan / Indicative evaluation Plan
 | API Endpoint    | Points |
 | --------------- | ------- |
-| **\`POST /api/shorten\`** (without stats object) | 10    |
+| **\`POST /api/shorten\`** (without stats object) | 15    |
 | **\`GET /:shortUrl\`** (without stats) | 10    |
 | **\`POST /api/shorten\`** (shortUrl level stats) | 20    |
 | **\`GET /:shortUrl\`** (shortUrl level stats) | 20    |
