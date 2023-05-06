@@ -1,26 +1,32 @@
 # URL Shortener REST API Service
 
-We need a URL shortener REST API service that allows you to create and manage short URLs. Each short URL created has statistics that track the time it was created, the last time it was accessed, the number of times it was accessed since the start of the day, and the maximum number of times it was accessed in a day and the total number of times it was accessed since created. Additionally it also maintains service level stats.
+We need a URL shortener REST API service that allows you to create and manage short URLs. Each short URL created has statistics that track the time it was created, the last time it was accessed, the number of times it was accessed since the start of the day, and the minimum/maximum/average number of times it was accessed in a day and the total number of times it was accessed since created, time(im ms) taken to create shortened URL, minimum/maximum/average/last time(in milliseconds) taken to access shortened url. Additionally it also maintains service level stats.
+
+It is expected to not use any other database service and use data structures, libraries or solutions within the language instead, for example HashTable. It is fine if all the data is lost when the service is restarted.
 
 ## Short URL Statistics
 
 For each short URL created using the API, you can retrieve statistics about the URL. These statistics include:
 
 - Time the short URL was created
+- Time taken(in ms) to create the short URL
 - Time the short URL was last accessed
+- Minimum/Maximum/Average/Last Time taken(in ms) to create the short URL
 - Number of times the short URL was accessed today
-- Maximum number of times the short URL was accessed in a day
+- Minimum/Maximum/Average number of times the short URL was accessed in a day
 - Number of times the short URL was accessed since created
 
 ## URL Shortener REST API Service Statistics
 In addition to the statistics for each individual URL, there are also statistics for the entire service. These statistics include:
 - Time when the last short URL was created
-- Time when the last short URL was accessed
+- Minimum/Maximum/Average/Last Time taken(in ms) to create short URLs
 - Number of short URLs created today
-- Maximum number of short URLs created in a day
+- Minimum/Maximum/Average number of short URLs created in a day
 - Total number of short URLs created
+- Time when the last short URL was accessed
+- Minimum/Maximum/Average/Last Time taken(in ms) to access short URLs
 - Number of short URLs accessed today
-- Maximum number of short URLs accessed in a day
+- Minimum/Maximum/Average number of short URLs accessed in a day
 - Total number of short URLs accessed
 
 ## API Endpoints
@@ -41,7 +47,9 @@ The response will be a JSON object containing the shortened URL and its statisti
     "created": "2023-05-06T12:34:56.789Z",
     "lastAccessed": "2023-05-06T12:34:56.789Z",
     "accessCountToday": 0,
+    "accessCountDailyMin": 0,
     "accessCountDailyMax": 0,
+    "accessCountDailyAvg": 0,
     "accessCount": 0
   }
 }
@@ -53,7 +61,7 @@ To redirect to the original URL associated with a short URL, make a **\`GET\`** 
 ```
 curl http://localhost:3000/abc123
 ```
-The response will be a redirect to the original URL associated with the short URL.
+The response will be a redirect to the original URL(https://example.com) associated with the short URL.
 
 
 - **\`GET /api/:shortUrl/stats\`**: Retrieves statistics about a specific short URL
@@ -67,8 +75,10 @@ The response will be a JSON object containing the statistics for the short URL:
 {
   "created": "2023-05-06T12:34:56.789Z",
   "lastAccessed": "2023-05-06T12:34:56.789Z",
-  "accessCountToday": 0,
+  "accessCountToday": 0,  
+  "accessCountDailyMin": 0,
   "accessCountDailyMax": 0,
+  "accessCountDailyAvg": 0,
   "accessCount": 0
 }
 ```
@@ -86,10 +96,14 @@ The response will be a JSON object containing an array of statistics for each sh
 		"lastCreated": "2023-05-06T12:34:56.789Z",
 		"lastAccessed": "2023-05-06T12:34:56.789Z",
 		"createCountToday": 0,
+		"createCountDailyMin": 0,
 		"createCountDailyMax": 0,
+		"createCountDailyAvg": 0,
 		"createCount": 2,
 		"accessCountToday": 0,
+		"accessCountDailyMin": 0,
 		"accessCountDailyMax": 0,
+		"accessCountDailyAvg": 0,
 		"accessCount": 0
 	},
 	"shortUrls": [{
@@ -98,7 +112,9 @@ The response will be a JSON object containing an array of statistics for each sh
 				"created": "2023-05-06T12:34:56.789Z",
 				"lastAccessed": "2023-05-06T12:34:56.789Z",
 				"accessCountToday": 0,
+				"accessCountDailyMin": 0,
 				"accessCountDailyMax": 0,
+				"accessCountDailyAvg": 0,
 				"accessCount": 0
 			}
 		},
@@ -108,7 +124,9 @@ The response will be a JSON object containing an array of statistics for each sh
 				"created": "2023-05-05T12:34:56.789Z",
 				"lastAccessed": "2023-05-05T12:34:56.789Z",
 				"accessCountToday": 0,
+				"accessCountDailyMin": 0,
 				"accessCountDailyMax": 0,
+				"accessCountDailyAvg": 0,
 				"accessCount": 0
 			}
 		}
