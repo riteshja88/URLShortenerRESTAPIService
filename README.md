@@ -11,7 +11,7 @@ For each short URL created using the API, you can retrieve statistics about the 
 - Time the short URL was created
 - Time taken(in ms) to create the short URL
 - Time the short URL was last accessed
-- Minimum/Maximum/Average/Last Time taken(in ms) to create the short URL
+- Minimum/Maximum/Average/Last Time taken(in ms) to access the short URL
 - Number of times the short URL was accessed today
 - Minimum/Maximum/Average number of times the short URL was accessed in a day
 - Number of times the short URL was accessed since created
