@@ -175,4 +175,14 @@ To install and run the URL shortener service, we should be able to follow these 
 2. Install the required dependencies using **\`npm install\`**
 3. Start the server using \`**npm start\`**
 
-
+## Suggested project plan / Indicative evaluation Plan
+| API Endpoint    | Points |
+| --------------- | ------- |
+| **\`POST /api/shorten\`** (without stats object) | 10    |
+| **\`GET /:shortUrl\`** (without stats) | 10    |
+| **\`POST /api/shorten\`** (shortUrl level stats) | 20    |
+| **\`GET /:shortUrl\`** (shortUrl level stats) | 20    |
+| **\`GET /api/:shortUrl/stats\`** | 10 |
+| **\`POST /api/shorten\`** (service level stats) | 15    |
+| **\`GET /:shortUrl\`** (service level stats) | 15    |
+| **\`GET /api/stats\`** | 10 |
