@@ -45,12 +45,17 @@ The response will be a JSON object containing the shortened URL and its statisti
   "shortUrl": "http://localhost:3000/abc123",
   "stats": {
     "created": "2023-05-06T12:34:56.789Z",
+    "createTimeTaken": 7,
     "lastAccessed": "2023-05-06T12:34:56.789Z",
     "accessCountToday": 0,
     "accessCountDailyMin": 0,
     "accessCountDailyMax": 0,
     "accessCountDailyAvg": 0,
-    "accessCount": 0
+    "accessCount": 0,
+    "accessTimeTakenLast": 0,
+    "accessTimeTakenMin": 0,
+    "accessTimeTakenMax": 0,
+    "accessTimeTakenAvg": 0  
   }
 }
 ```
@@ -61,7 +66,7 @@ To redirect to the original URL associated with a short URL, make a **\`GET\`** 
 ```
 curl http://localhost:3000/abc123
 ```
-The response will be a redirect to the original URL(https://example.com) associated with the short URL.
+The response will be a redirect to the original URL(https://example.com) associated with the short URL. This should work from a browser e.g Chrome.
 
 
 - **\`GET /api/:shortUrl/stats\`**: Retrieves statistics about a specific short URL
@@ -74,12 +79,17 @@ The response will be a JSON object containing the statistics for the short URL:
 ```
 {
   "created": "2023-05-06T12:34:56.789Z",
+  "createTimeTaken": 7,
   "lastAccessed": "2023-05-06T12:34:56.789Z",
-  "accessCountToday": 0,  
+  "accessCountToday": 0,
   "accessCountDailyMin": 0,
   "accessCountDailyMax": 0,
   "accessCountDailyAvg": 0,
-  "accessCount": 0
+  "accessCount": 0,
+  "accessTimeTakenLast": 0,
+  "accessTimeTakenMin": 0,
+  "accessTimeTakenMax": 0,
+  "accessTimeTakenAvg": 0
 }
 ```
 
@@ -94,7 +104,9 @@ The response will be a JSON object containing an array of statistics for each sh
 {
 	"stats": {
 		"lastCreated": "2023-05-06T12:34:56.789Z",
+		"lastCreatedShortUrl": "http://localhost:3000/abc123",
 		"lastAccessed": "2023-05-06T12:34:56.789Z",
+		"lastAccessedShortUrl": "http://localhost:3000/abc123",
 		"createCountToday": 0,
 		"createCountDailyMin": 0,
 		"createCountDailyMax": 0,
@@ -105,29 +117,49 @@ The response will be a JSON object containing an array of statistics for each sh
 		"accessCountDailyMax": 0,
 		"accessCountDailyAvg": 0,
 		"accessCount": 0
+		"accessTimeTakenLast": 0,
+		"accessTimeTakenMin": 0,
+		"accessTimeTakenMax": 0,
+		"accessTimeTakenAvg": 0,
+		"createTimeTakenLast": 0,
+		"createTimeTakenMin": 0,
+		"createTimeTakenMax": 0,
+		"createTimeTakenAvg": 0
+
+
 	},
 	"shortUrls": [{
 			"shortUrl": "http://localhost:3000/abc123",
 			"stats": {
 				"created": "2023-05-06T12:34:56.789Z",
+				"createTimeTaken": 7,
 				"lastAccessed": "2023-05-06T12:34:56.789Z",
 				"accessCountToday": 0,
 				"accessCountDailyMin": 0,
 				"accessCountDailyMax": 0,
 				"accessCountDailyAvg": 0,
-				"accessCount": 0
+				"accessCount": 0,
+				"accessTimeTakenLast": 0,
+				"accessTimeTakenMin": 0,
+				"accessTimeTakenMax": 0,
+				"accessTimeTakenAvg": 0
 			}
 		},
 		{
 			"shortUrl": "http://localhost:3000/def456",
 			"stats": {
 				"created": "2023-05-05T12:34:56.789Z",
+				"createTimeTaken": 5,
 				"lastAccessed": "2023-05-05T12:34:56.789Z",
 				"accessCountToday": 0,
 				"accessCountDailyMin": 0,
 				"accessCountDailyMax": 0,
 				"accessCountDailyAvg": 0,
-				"accessCount": 0
+				"accessCount": 0,
+				"accessTimeTakenLast": 0,
+				"accessTimeTakenMin": 0,
+				"accessTimeTakenMax": 0,
+				"accessTimeTakenAvg": 0
 			}
 		}
 	]
