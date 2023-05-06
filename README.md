@@ -192,5 +192,5 @@ It may be best to follow the above order and resist temptation to aim for more p
 
 ## TODO
 - More user friendly, possibility to create a short URL from browser itself(GET) just by prefixing the service url in some manner to the target URL.
-- What if memory is full and we are not able to create new short URLS? expiry of shortURLs, eviction, etc.
+- What if memory is full and we are not able to create new short URLS? expiry of shortURLs, eviction, HTTP_NOT_OK etc.
 - What if we get requests for invalid shortURLs? stats, etc.
