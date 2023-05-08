@@ -195,4 +195,4 @@ It may be best to follow the above order and resist temptation to aim for more p
 - What if memory is full and we are not able to create new short URLS? expiry of shortURLs, eviction, HTTP_NOT_OK, HTTP Status codes for various scenarios etc.
 - What if we get requests for invalid shortURLs? stats, etc.
 - HTTP status codes
-- periodic persisten data snapshot  and restore
+- periodic persistent data snapshot  and restore on restart.
