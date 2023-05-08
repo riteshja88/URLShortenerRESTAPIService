@@ -1,6 +1,6 @@
 # URL Shortener REST API Service
 
-We need a URL shortener REST API service that allows you to create and manage short URLs. Each short URL created has statistics that track the time it was created, the last time it was accessed, the number of times it was accessed since the start of the day, and the minimum/maximum/average number of times it was accessed in a day and the total number of times it was accessed since created, time(im ms) taken to create shortened URL, minimum/maximum/average/last time(in milliseconds) taken to access shortened url. Additionally it also maintains service level stats.
+We need a URL shortener REST API service that allows you to create and manage short URLs. Each short URL created has statistics that track the time it was created, the last time it was accessed, the number of times it was accessed since the start of the day, and the minimum/maximum/average number of times it was accessed in a day and the total number of times it was accessed since created, time(in ms) taken to create shortened URL, minimum/maximum/average/last time(in milliseconds) taken to access shortened url. Additionally it also maintains service level stats.
 
 It is expected to not use any other database service and use data structures, libraries or solutions within the language instead, for example HashTable. It is fine if all the data is lost when the service is restarted.
 
@@ -195,3 +195,4 @@ It may be best to follow the above order and resist temptation to aim for more p
 - What if memory is full and we are not able to create new short URLS? expiry of shortURLs, eviction, HTTP_NOT_OK, HTTP Status codes for various scenarios etc.
 - What if we get requests for invalid shortURLs? stats, etc.
 - HTTP status codes
+- periodic persisten data snapshot  and restore
